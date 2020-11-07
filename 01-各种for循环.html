@@ -1,11 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <p>各种for循环</p>
+    <script>
+        // 'name:tom----age:18'
+        let book_list = [
+            {
+                name: "tom",
+                age: 18,
+                sex: '男',
+                gread: '一年级'
+            }, {
+                name: "Jack",
+                age: 20
+            },
+            {
+                name: "lucky",
+                age: 16
+            }
+        ];
+
+        function base_for() {
+            // for循环 循环数组
+            for (let i = 0; i < book_list.length; i++) {
+                // console.log('name:'+book_list[i].name+'------age:'+book_list[i].age)
+                let name = 'tom';
+                let str = 'name:' + name
+                console.log(`name:${book_list[i].name}----age:${book_list[i].age}`)
+
+            }
+        }
+
+        function for_in() {
+            // for in 循环 循环对象
+            let tom = book_list[0];
+            for (let key in tom) {//key是活的
+                // console.log(key)//单个的活key
+                console.log(`${key}:${tom[key]}----------${key}`)
+            }
+        }
+        // for_in();
+
+
+        function for_of() {
+            // for_of 循环数组
+            for (let item of book_list) {
+                // console.log(item)//单个对象
+                console.log(`${item['name']}----${item.age}----`)
+            }
+        }
+
+        // for_of();
+
+
+
+
+        function for_each() {
+            //循环数组，传多个参数
+            book_list.forEach(function (a, i) {
+                // console.log(a)//单个对象
+
+                // 需求：把数组中的第二项 name 改成 bobo
+                if (book_list[i].name == 'lucky') {
+                    book_list[i].name = "bobo"
+                }
+            })
+            console.log(book_list)
+        }
+
+        // for_each();
+
+
+        // 九九乘法表
+        function jiujiu() {
+            for (let i = 1; i <= 9; i++) {
+                for(let j=1;j<=i;j++){
+                    document.write(`${j}*${i}=${j*i} `) 
+                }
+                document.write(`<br />`)
+            }
+        }
+        jiujiu();
+
+    </script>
 </body>
+
 </html>
