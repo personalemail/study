@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <script>
+        //定时器
+        function mysetInterVal(fn, a, b) {
+        }
+        // console.log(mysetInterVal)
+
+        // 函数
+        var x = function (a, b) {
+            return a * b
+        }
+        var z = x(4, 3)
+        // console.log(z);  //12
+
+
+        let set = function () {
+
+        }
+
+        let set2 = () => {
+
+        }
+        // function()相当于 ()=> 
+
+        // function fun1(){
+        //     setTimeout(function(){
+        //         console.log("hello")
+        //         setTimeout(()=>{
+        //             console.log("123")
+        //         },2000)
+        //     },2000)
+        // }
+        // fun1();
+
+        const getMessage =()=>{
+            console.log('我被调用了mess');
+        }
+        const getBox =()=>{
+            console.log('我被调用了box');
+        }
+
+        function con1(res){
+            console.log(res)
+        }
+        con1([1,2,3]);
+
+
+
+        const con2=(ss)=>{
+            ss();
+        }
+
+        con2(getMessage)
+
+
+
+
+
+
+        // 模拟微信支付方法
+
+        // obj={
+        //     shopid, //商户ID
+        //     orderid,
+        //     signal
+        // }
+
+
+        function wxPay(obj,callback){
+            console.log(typeof obj != 'object')
+            if(typeof obj != 'object') return ;
+            obj.shopid=88;
+            
+            callback({error:'签名错误'})
+        }
+
+        // 
+
+        let backReturn={id:123};
+        const getMessage123=((callback)=>{
+            console.log("我是最后一个"+JSON.stringify(callback))
+        })
+        wxPay(backReturn,getMessage123)
+
+    </script>
+</body>
+
+</html>
